@@ -316,3 +316,8 @@ h4.dateP {
     text-align: center;
   }
 }
+
+.rover:hover {
+  box-shadow: none;
+  transition: none
+}
