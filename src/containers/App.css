@@ -321,3 +321,8 @@ h4.dateP {
   box-shadow: none;
   transition: none
 }
+
+.rover:active {
+  box-shadow: none;
+  transition: none
+}
