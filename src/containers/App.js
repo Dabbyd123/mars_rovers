@@ -58,7 +58,7 @@ class App extends Component {
     const baseURL = `https://api.nasa.gov/mars-photos/api/v1/manifests/${rover}?api_key=${myKey}`;
     const response = await fetch(baseURL);
     const data = await response.json();
-    this.setState({
+    await this.setState({
       rover: {
         name: `${data.photo_manifest.name}`,
         landing_date: `${data.photo_manifest.landing_date}`,
@@ -72,7 +72,7 @@ class App extends Component {
         }
       ],
     });
-    this.toggleActiveRover();
+    await this.toggleActiveRover();
     this.imageDate.current.value = ''
   }
 
@@ -126,7 +126,7 @@ class App extends Component {
                   />
                 </div>
                 <div className="dateButton">
-                  <button type="button" onClick={this.onSubmitHandler}>Submit</button>
+                  <button type="button" className="submit pill" onClick={this.onSubmitHandler}>Submit</button>
                 </div>
               </div>
               : null
@@ -144,7 +144,7 @@ class App extends Component {
           photos.length > 1 && isLoading === false ?
             <div>
               <div className="lightBox_button">
-                <button type="button" onClick={() => this.setState({ isOpen: true })}>
+                <button type="button" className="fullScreen pill" onClick={() => this.setState({ isOpen: true })}>
                   View Images Fullscreen
               </button>
               </div>
