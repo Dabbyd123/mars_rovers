@@ -36,19 +36,24 @@ class App extends Component {
     this.setState({
       isLoading: true
     })
-    const response = await fetch(baseURL);
-    const data = await response.json();
-    this.setState({
-      photos: data.photos.map(photo => {
-        return (
-          {
-            image: `${photo.img_src}`,
-            camera: `${photo.camera.full_name}`
-          }
-        )
-      }),
-      isLoading: false
-    })
+    try {
+      const response = await fetch(baseURL);
+      const data = await response.json();
+      this.setState({
+        photos: data.photos.map(photo => {
+          return (
+            {
+              image: `${photo.img_src}`,
+              camera: `${photo.camera.full_name}`
+            }
+          )
+        }),
+        isLoading: false
+      })
+    }
+    catch (err) {
+      console.log('failed to fetch photos, make sure you are requesting a day within date range given.', err)
+    }
   }
 
 
@@ -56,24 +61,30 @@ class App extends Component {
     const rover = e.target.id;
     const myKey = 'wmdSvbEPSSpfZc9g6WaDqWZqlmsZhFYLs6jElBeQ';
     const baseURL = `https://api.nasa.gov/mars-photos/api/v1/manifests/${rover}?api_key=${myKey}`;
-    const response = await fetch(baseURL);
-    const data = await response.json();
-    await this.setState({
-      rover: {
-        name: `${data.photo_manifest.name}`,
-        landing_date: `${data.photo_manifest.landing_date}`,
-        max_date: `${data.photo_manifest.max_date}`,
-        active: true
-      },
-      photos: [
-        {
-          image: '',
-          camera: ''
-        }
-      ],
-    });
-    await this.toggleActiveRover();
-    this.imageDate.current.value = ''
+    try {
+      const response = await fetch(baseURL);
+      console.log(response.status);
+      const data = await response.json();
+      this.setState({
+        rover: {
+          name: `${data.photo_manifest.name}`,
+          landing_date: `${data.photo_manifest.landing_date}`,
+          max_date: `${data.photo_manifest.max_date}`,
+          active: true
+        },
+        photos: [
+          {
+            image: '',
+            camera: ''
+          }
+        ],
+      });
+      this.toggleActiveRover();
+      this.imageDate.current.value = ''
+    }
+    catch (err) {
+      console.log('failed to fetch data', err)
+    }
   }
 
   toggleActiveRover = () => {
@@ -94,7 +105,6 @@ class App extends Component {
 
     const { isOpen, rover, photos, photoIndex, isLoading } = this.state;
 
-
     return (
       <div className="App" >
         <div className="wrapper">
@@ -110,6 +120,7 @@ class App extends Component {
           </div>
 
           <Rovers clickHandler={this.roverClickHandler} />
+
 
           {
             rover.active === true ?

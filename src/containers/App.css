@@ -207,11 +207,6 @@ h4.dateP {
   transition: .5s ease;
 }
 
-.rover:active {
-  box-shadow: none;
-  transition: .5s ease
-}
-
 
 @media (min-width:768px) and (max-width:991px) {
   .header {
