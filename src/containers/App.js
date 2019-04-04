@@ -30,13 +30,14 @@ class App extends Component {
 
 
   onSubmitHandler = async () => {
-    const dateValue = this.imageDate.current.value;
-    const myKey = 'wmdSvbEPSSpfZc9g6WaDqWZqlmsZhFYLs6jElBeQ';
-    const baseURL = `https://api.nasa.gov/mars-photos/api/v1/rovers/${this.state.rover.name}/photos?earth_date=${dateValue}&api_key=${myKey}`;
-    this.setState({
-      isLoading: true
-    })
     try {
+      const dateValue = this.imageDate.current.value;
+      const rover = this.state.rover.name;
+      const myKey = 'wmdSvbEPSSpfZc9g6WaDqWZqlmsZhFYLs6jElBeQ';
+      const baseURL = `https://api.nasa.gov/mars-photos/api/v1/rovers/${rover}/photos?earth_date=${dateValue}&api_key=${myKey}`;
+      this.setState({
+        isLoading: true
+      })
       const response = await fetch(baseURL);
       const data = await response.json();
       this.setState({
@@ -58,10 +59,10 @@ class App extends Component {
 
 
   roverClickHandler = async (e) => {
-    const rover = e.target.id;
-    const myKey = 'wmdSvbEPSSpfZc9g6WaDqWZqlmsZhFYLs6jElBeQ';
-    const baseURL = `https://api.nasa.gov/mars-photos/api/v1/manifests/${rover}?api_key=${myKey}`;
     try {
+      const rover = e.target.id;
+      const myKey = 'wmdSvbEPSSpfZc9g6WaDqWZqlmsZhFYLs6jElBeQ';
+      const baseURL = `https://api.nasa.gov/mars-photos/api/v1/manifests/${rover}?api_key=${myKey}`;
       const response = await fetch(baseURL);
       console.log(response.status);
       const data = await response.json();
