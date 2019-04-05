@@ -54,8 +54,6 @@ div.instructions>h4 {
 }
 
 .Curiosity {
-  height: 200px;
-  width: 260px;
   background-image: linear-gradient(rgba(255, 255, 255, .7), rgba(255, 255, 255, .7)),
     url('../roverImages/curiosity.jpg');
   background-size: cover;
@@ -65,8 +63,6 @@ div.instructions>h4 {
 }
 
 .Curiosity_active {
-  height: 200px;
-  width: 260px;
   background-image: url('../roverImages/curiosity.jpg');
   background-size: cover;
   background-repeat: no-repeat;
@@ -77,8 +73,6 @@ div.instructions>h4 {
 }
 
 .Spirit {
-  height: 200px;
-  width: 260px;
   background-image: linear-gradient(rgba(255, 255, 255, .7), rgba(255, 255, 255, .7)),
     url('../roverImages/spirit.jpg');
   background-size: cover;
@@ -88,8 +82,6 @@ div.instructions>h4 {
 }
 
 .Spirit_active {
-  height: 200px;
-  width: 260px;
   background-image: url('../roverImages/spirit.jpg');
   background-size: cover;
   background-repeat: no-repeat;
@@ -100,8 +92,6 @@ div.instructions>h4 {
 }
 
 .Opportunity {
-  height: 200px;
-  width: 260px;
   background-image: linear-gradient(rgba(255, 255, 255, .7), rgba(255, 255, 255, .7)),
     url('../roverImages/opportunity.jpg');
   background-size: cover;
@@ -111,8 +101,6 @@ div.instructions>h4 {
 }
 
 .Opportunity_active {
-  height: 200px;
-  width: 260px;
   background-image: url('../roverImages/opportunity.jpg');
   background-size: cover;
   background-repeat: no-repeat;
@@ -265,6 +253,36 @@ h4.dateP {
     align-self: end;
     justify-self: center;
     font-size: 1em
+  }
+
+  .Opportunity_active {
+    background-image: url('../roverImages/opportunity.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: fixed;
+    box-shadow: 2px 3px 5px grey;
+    border: 2px solid orange;
+    color: white
+  }
+
+  .Curiosity_active {
+    background-image: url('../roverImages/opportunity.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: fixed;
+    box-shadow: 2px 3px 5px grey;
+    border: 2px solid orange;
+    color: white
+  }
+
+  .Spirit_active {
+    background-image: url('../roverImages/opportunity.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: fixed;
+    box-shadow: 2px 3px 5px grey;
+    border: 2px solid orange;
+    color: white
   }
 
   .date-wrapper {
