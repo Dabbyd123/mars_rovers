@@ -59,8 +59,14 @@ class App extends Component {
 
 
   roverClickHandler = async (e) => {
+    const rover = e.target.id;
+    await this.setState({
+      rover: {
+        name: rover
+      }
+    })
+    await this.toggleActiveRover();
     try {
-      const rover = e.target.id;
       const myKey = 'wmdSvbEPSSpfZc9g6WaDqWZqlmsZhFYLs6jElBeQ';
       const baseURL = `https://api.nasa.gov/mars-photos/api/v1/manifests/${rover}?api_key=${myKey}`;
       const response = await fetch(baseURL);
@@ -80,13 +86,13 @@ class App extends Component {
           }
         ],
       });
-      this.toggleActiveRover();
       this.imageDate.current.value = ''
     }
     catch (err) {
       console.log('failed to fetch data', err)
     }
   }
+
 
   toggleActiveRover = () => {
     const allRovers = document.querySelectorAll('.rover');
