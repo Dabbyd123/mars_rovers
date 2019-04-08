@@ -63,7 +63,8 @@ class App extends Component {
     await this.setState({
       rover: {
         name: rover
-      }
+      },
+      isLoading: true
     })
     await this.toggleActiveRover();
     try {
@@ -72,7 +73,7 @@ class App extends Component {
       const response = await fetch(baseURL);
       console.log(response.status);
       const data = await response.json();
-      this.setState({
+      await this.setState({
         rover: {
           name: `${data.photo_manifest.name}`,
           landing_date: `${data.photo_manifest.landing_date}`,
@@ -85,6 +86,7 @@ class App extends Component {
             camera: ''
           }
         ],
+        isLoading: false
       });
       this.imageDate.current.value = ''
     }
