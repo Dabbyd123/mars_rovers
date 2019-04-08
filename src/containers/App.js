@@ -169,7 +169,7 @@ class App extends Component {
                   View Images Fullscreen
               </button>
               </div>
-              <CardList photos={photos} />
+              <CardList photos={photos} onClick={(e) => this.setState({ isOpen: true, photoIndex: e.target.id })} />
               {isOpen && (
                 <Lightbox
                   mainSrc={photos[photoIndex].image}

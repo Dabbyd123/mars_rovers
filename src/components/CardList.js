@@ -12,6 +12,7 @@ const CardList = (props) => {
                         key={i}
                         image={img.image}
                         className="card"
+                        click={props.onClick}
                     />
                 );
             })}
