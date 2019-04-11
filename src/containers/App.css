@@ -178,15 +178,15 @@ h4.dateP {
   grid-column: 2/4;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 3em;
+  grid-gap: 4em;
   justify-self: center;
   padding-bottom: 2em;
   padding-top: 2em
 }
 
 .rover {
-  height: 210px;
-  width: 320px;
+  height: 220px;
+  width: 340px;
   text-align: center;
 }
 
@@ -322,8 +322,8 @@ h4.dateP {
   }
 
   .rover {
-    height: 75px;
-    width: 270px;
+    height: 80px;
+    width: 280px;
     text-align: center;
   }
 }

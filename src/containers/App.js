@@ -169,13 +169,13 @@ class App extends Component {
                   View Images Fullscreen
               </button>
               </div>
-              <CardList photos={photos} onClick={(e) => this.setState({ isOpen: true, photoIndex: e.target.id })} />
+              <CardList photos={photos} onClick={(e) => this.setState({ isOpen: true, photoIndex: Number(e.target.id) })} />
               {isOpen && (
                 <Lightbox
                   mainSrc={photos[photoIndex].image}
                   nextSrc={photos[(photoIndex + 1) % photos.length]}
                   prevSrc={photos[(photoIndex + photos.length - 1) % photos.length].image}
-                  onCloseRequest={() => this.setState({ isOpen: false })}
+                  onCloseRequest={() => this.setState({ isOpen: false, photoIndex: 0 })}
                   onMovePrevRequest={() =>
                     this.setState({
                       photoIndex: (photoIndex + photos.length - 1) % photos.length,
