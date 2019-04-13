@@ -95,6 +95,13 @@ class App extends Component {
     }
   }
 
+  formatDateHandler = (date) => {
+    const year = date.substring(0, 4);
+    const day = date.substring(date.length - 2);
+    const month = date.substring(5, 7);
+    return `${month}/${day}/${year}`
+  }
+
 
   toggleActiveRover = () => {
     const allRovers = document.querySelectorAll('.rover');
@@ -107,7 +114,6 @@ class App extends Component {
       }
     })
   }
-
 
 
   render() {
@@ -136,7 +142,7 @@ class App extends Component {
             rover.active === true ?
               <div className="date-wrapper">
                 <h4 className="dateP">
-                  Choose a date between {rover.landing_date} and {rover.max_date} to see the pictures that {rover.name} took that day.
+                  Choose a date between <strong>{this.formatDateHandler(rover.landing_date)}</strong> and <strong>{this.formatDateHandler(rover.max_date)}</strong> to see the pictures that {rover.name} took that day.
                 </h4>
                 <div className="dateBox">
                   <input
