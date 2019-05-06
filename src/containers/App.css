@@ -260,7 +260,7 @@ h4.dateP {
     grid-row: 1;
     justify-self: center;
     text-align: center;
-    font-size: 2.7rem;
+    font-size: 3rem;
     border-bottom: 1px solid lightgrey;
     padding-bottom: .3em
   }
