@@ -59,19 +59,18 @@ class App extends Component {
 
 
   roverClickHandler = async (e) => {
-    const rover = e.target.id;
-    await this.setState({
-      rover: {
-        name: rover
-      },
-      isLoading: true
-    })
-    await this.toggleActiveRover();
     try {
+      let rover = e.target.id;
+      await this.setState({
+        rover: {
+          name: `${rover}`,
+        },
+        isLoading: true
+      })
+      await this.toggleActiveRover();
       const myKey = 'wmdSvbEPSSpfZc9g6WaDqWZqlmsZhFYLs6jElBeQ';
       const baseURL = `https://api.nasa.gov/mars-photos/api/v1/manifests/${rover}?api_key=${myKey}`;
       const response = await fetch(baseURL);
-      // console.log(response.status);
       const data = await response.json();
       await this.setState({
         rover: {
