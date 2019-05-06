@@ -5,6 +5,7 @@ body {
   width: 100vw;
   font-size: 10px;
   font-family: 'Open Sans', sans-serif;
+  overflow-x: none
 }
 
 button.pill {
@@ -28,7 +29,6 @@ button.pill:active {
 
 .navbar {
   grid-column: 1/4;
-
 }
 
 .header {
@@ -37,6 +37,8 @@ button.pill:active {
   justify-self: center;
   font-size: 4rem;
   font-weight: bold;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  text-shadow: 2px 1px 1px lightslategray;
   border-bottom: 1px solid lightgrey;
   padding-bottom: .3em
 }
@@ -59,7 +61,10 @@ div.instructions>h4 {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: fixed;
-  border: 1px solid black;
+  border: 1px solid grey;
+  display: flex;
+  align-items: center;
+  justify-content: center
 }
 
 .Curiosity_active {
@@ -69,7 +74,7 @@ div.instructions>h4 {
   background-position: fixed;
   box-shadow: 4px 6px 10px grey;
   border: 2px solid orange;
-  color: white
+  color: white;
 }
 
 .Spirit {
@@ -78,7 +83,10 @@ div.instructions>h4 {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: fixed;
-  border: 1px solid black;
+  border: 1px solid grey;
+  display: flex;
+  align-items: center;
+  justify-content: center
 }
 
 .Spirit_active {
@@ -88,7 +96,7 @@ div.instructions>h4 {
   background-position: fixed;
   box-shadow: 4px 6px 10px grey;
   border: 2px solid orange;
-  color: white
+  color: white;
 }
 
 .Opportunity {
@@ -97,7 +105,10 @@ div.instructions>h4 {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: fixed;
-  border: 1px solid black;
+  border: 1px solid grey;
+  display: flex;
+  align-items: center;
+  justify-content: center
 }
 
 .Opportunity_active {
@@ -107,7 +118,8 @@ div.instructions>h4 {
   background-position: fixed;
   box-shadow: 4px 6px 10px grey;
   border: 2px solid orange;
-  color: white
+  color: white;
+  font: bold;
 }
 
 .date-wrapper {
@@ -189,6 +201,11 @@ h4.dateP {
   height: 220px;
   width: 375px;
   text-align: center;
+  font-stretch: expanded;
+  font-size: 2.5em;
+  font-weight: normal;
+  text-shadow: 1px 1px 1px grey;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
 }
 
 .rover:hover {
@@ -332,7 +349,7 @@ h4.dateP {
 
   .rover {
     height: 80px;
-    width: 32em;
+    width: 350px;
     text-align: center;
   }
 }
