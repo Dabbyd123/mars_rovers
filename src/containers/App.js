@@ -71,7 +71,7 @@ class App extends Component {
       const myKey = 'wmdSvbEPSSpfZc9g6WaDqWZqlmsZhFYLs6jElBeQ';
       const baseURL = `https://api.nasa.gov/mars-photos/api/v1/manifests/${rover}?api_key=${myKey}`;
       const response = await fetch(baseURL);
-      console.log(response.status);
+      // console.log(response.status);
       const data = await response.json();
       await this.setState({
         rover: {
