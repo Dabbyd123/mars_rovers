@@ -16,6 +16,10 @@ button.pill {
   box-shadow: 2px 2px grey;
 }
 
+button.pill:hover {
+  cursor: pointer
+}
+
 button.pill:active {
   box-shadow: none;
   transition: .5 ease;
@@ -178,7 +182,11 @@ h4.dateP {
   width: 230px;
   border: 1px solid black;
   box-shadow: 2px 3px lightgrey;
-  justify-self: center
+  justify-self: center;
+}
+
+.card:hover {
+  cursor: pointer
 }
 
 .image {
@@ -212,6 +220,7 @@ h4.dateP {
 .rover:hover {
   box-shadow: 3px 5px 8px grey;
   transition: .5s ease;
+  cursor: pointer
 }
 
 
