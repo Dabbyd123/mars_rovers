@@ -4,8 +4,9 @@ body {
   height: 100vh;
   width: 100vw;
   font-size: 10px;
+  background-color: #FFFFFF;
   font-family: 'Open Sans', sans-serif;
-  overflow-x: none
+  overflow: hidden
 }
 
 button.pill {
