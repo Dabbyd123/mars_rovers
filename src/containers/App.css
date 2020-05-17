@@ -9,6 +9,10 @@ body {
   overflow-x: hidden
 }
 
+Lightbox {
+  z-index: 2
+}
+
 button.pill {
   background-color: orange;
   color: white;
@@ -160,6 +164,7 @@ h4.dateP {
   padding-top: 1em;
   padding-bottom: 1em
 }
+
 
 .loading {
   margin: 0 auto;

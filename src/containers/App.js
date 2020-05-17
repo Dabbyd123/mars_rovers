@@ -3,6 +3,8 @@ import CardList from '../components/CardList';
 import Rovers from '../components/Rovers';
 import Loading from '../components/Loading';
 import Lightbox from 'react-image-lightbox';
+import * as Scroll from 'react-scroll';
+import { Link, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll';
 import 'react-image-lightbox/style.css';
 import '../containers/App.css';
 
@@ -53,7 +55,7 @@ class App extends Component {
       })
     }
     catch (err) {
-      console.log('failed to fetch photos, make sure you are requesting a day within date range given.', err)
+      console.log('Failed to fetch photos, make sure you are requesting a day within date range given.', err)
     }
   }
 
